@@ -1,0 +1,1 @@
+Jmeter -Dlog_level.jmeter=DEBUG -JTARGET_HOST=172.17.0.1 -JTARGET_PORT=8081 -H zap -P 8083 -N 172.17.0.1 -n -t ./HTTP_Request.jmx -l ./HTTP_Request.jtl -j ./jmeter.log -e -o ./securityreport
