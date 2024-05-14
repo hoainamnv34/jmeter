@@ -5,14 +5,16 @@ LABEL org.opencontainers.image.authors="hoainamnv34"
 # JMeter version
 ARG JMETER_VERSION=5.6.3 
 
-# Install few utilities
+# Install some utilities
 RUN apt-get clean && \
     apt-get update && \
     apt-get -qy install \
                 wget \
                 telnet \
                 iputils-ping \
-                unzip
+                unzip \
+                python3 \
+                python3-pip
 
 # Install JMeter
 RUN   mkdir /jmeter \
@@ -21,16 +23,22 @@ RUN   mkdir /jmeter \
       && tar -xzf apache-jmeter-$JMETER_VERSION.tgz \
       && rm apache-jmeter-$JMETER_VERSION.tgz
 
-      
-# # ADD all the plugins
-# ADD jmeter-plugins/lib /jmeter/apache-jmeter-$JMETER_VERSION/lib
 
-# # ADD the sample test
-# ADD sample-test sample-test
+RUN pip3 install requests
 
 # Set JMeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
 
 # Add JMeter to the Path
 ENV PATH $JMETER_HOME/bin:$PATH
+
+
+COPY tests /root
+WORKDIR	$JMETER_HOME
+
+
+COPY endpoint.py /endpoint.py
+
+ENTRYPOINT ["python3", "/endpoint.py"]
+
 

@@ -1,8 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1715623596508,18,HTTP_Request_WebGoat,200,OK,Thread Group 1-1,text,true,,2377,451,1,1,http://172.17.0.1:8081/WebGoat/login?error,12,0,9
-1715623596508,13,HTTP_Request_WebGoat-0,302,Found,Thread Group 1-1,,true,,231,269,1,1,http://172.17.0.1:8081/WebGoat/login,12,0,9
-1715623596522,4,HTTP_Request_WebGoat-1,200,OK,Thread Group 1-1,text,true,,2146,182,1,1,http://172.17.0.1:8081/WebGoat/login?error,3,0,0
-1715623596527,4,HTTP Request,200,OK,Thread Group 1-1,text,true,,2095,181,1,1,http://172.17.0.1:8081/WebGoat/login,4,0,0
-1715623596531,351,HTTP Request,200,OK,Thread Group 1-1,text,true,,23686,324,1,1,http://www.google.com/,134,0,1
-1715623596531,134,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,773,158,1,1,http://google.com/,134,0,1
-1715623596665,217,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,22913,166,1,1,http://www.google.com/,217,0,1
