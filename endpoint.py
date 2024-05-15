@@ -152,8 +152,16 @@ def main():
     wait_for_it(zap_host, zap_port, 10)
     print("Zap is running")
 
+
+    # Parse target host and port
+    target_host_and_port = args.target[len("http://"):]
+    target_host, target_port = target_host_and_port.split(':')
+
+    # Convert target_port to integer
+    target_port = int(target_port)
+
     # Wait for Target host to be available
-    wait_for_it(zap_host, zap_port, 10)
+    wait_for_it(target_host, target_port, 10)
     print("Target is running")
 
 
