@@ -5,11 +5,8 @@ inputs:
   target:
     description: "The URL of the application to be tested"
     required: true
-  zap_http:
-    description: "zap http"
-    required: true
-  zap_https:
-    description: "zap https"
+  zap-host:
+    description: "zap host"
     required: true
 runs:
   using: 'docker'
@@ -18,6 +15,4 @@ runs:
   - --target 
   - "${{ inputs.target }}" 
   - --zap-host 
-  - "${{ inputs.zap_http }}"
-  - --zap-host-ssh
-  - "${{ inputs.zap_https }}"
+  - "${{ inputs.zap-host }}"
