@@ -3,4 +3,4 @@ jmeter -Dlog_level.jmeter=DEBUG  -n -t /root/tests/test-file/HTTP_Request.jmx -l
 
 python3 pen-test-app.py --target "http://127.0.0.1:8081/" --zap-host "http://127.0.0.1:8083" --zap-host-ssh "http://127.0.0.1:8083"
 
-docker run hoainamnv34/jmeter:0.0.2 --target "http://172.17.0.1:8081" --zap-host "http://172.17.0.1:8083"
+docker run hoainamnv34/jmeter:0.0.2 --target "http://172.17.0.1:8081" --zap-host "http://172.17.0.1:8084"
