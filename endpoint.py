@@ -14,7 +14,9 @@ def fetchArguments():
     parse.add_argument('-t', '--target', help='Specify target to scan',
                        default='http://localhost:80', dest='target')
     parse.add_argument('-z', '--zap-host', help='address and port of ZAP host',
-                       default='127.0.0.1:8085', dest='zap_host')
+                       default='127.0.0.1:8085', dest='zap_host'),
+    parse.add_argument('-f', '--test-file', help='Path to the JMX test file.',
+                       default='/root/test-file/HTTP_Request.jmx', dest='test_file')
     
 
     return parse.parse_args()
@@ -166,12 +168,12 @@ def main():
 
 
     jmeter_path = "jmeter"  # Replace with actual path to JMeter executable
-    jmx_file = "/root/test-file/HTTP_Request.jmx"
+    # jmx_file = "/root/test-file/HTTP_Request.jmx"
     jtl_file = "/root/jmeter-report/HTTP_Request.jtl"
     log_file = "/root/jmeter-report/jmeter.log"
     output_dir = "/root/jmeter-report/output"
 
-    result=run_jmeter(jmeter_path, jmx_file, jtl_file, log_file, output_dir)
+    result=run_jmeter(jmeter_path, args.test_file, jtl_file, log_file, output_dir)
     print(result)
 
     

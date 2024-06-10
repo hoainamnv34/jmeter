@@ -5,6 +5,9 @@ inputs:
   target:
     description: "The URL of the application to be tested"
     required: true
+  test-file:
+    description: Path to the JMX test file.
+    required: true
   zap-host:
     description: "zap host"
     required: true
@@ -14,5 +17,7 @@ runs:
   args:
   - --target 
   - "${{ inputs.target }}" 
+  - --test-file
+  - "${{ inputs.test-file }}" 
   - --zap-host 
   - "${{ inputs.zap-host }}"

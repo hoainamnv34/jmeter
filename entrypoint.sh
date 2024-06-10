@@ -1,9 +1,5 @@
 #!/bin/bash
 
-
-
-
-
 # # Remove existing security results directory
 # rm -rf /results/jmeter/security > /dev/null 2>&1
 echo "[INFO] Start Running Jmeter"
